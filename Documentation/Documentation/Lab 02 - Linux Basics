@@ -1,0 +1,39 @@
+# Lab 02 - Linux Basics
+
+## Objective
+
+Learn basic Linux commands and navigation.
+
+## Commands Practiced
+
+hostname
+whoami
+pwd
+ls
+ls -la
+mkdir
+
+## Results
+
+Successfully identified:
+
+- Hostname
+- Username
+- Current directory
+
+Successfully viewed directory contents.
+
+Successfully created a new directory named TestFolder.
+
+## Skills Learned
+
+- Basic Linux navigation
+- User identification
+- Host identification
+- Directory management
+
+## Evidence
+
+Screenshots for this lab are stored in:
+
+Screenshots/Lab-02/
