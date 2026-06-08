@@ -1,51 +1,321 @@
-# Lab 03 - File Management
+# Lab 03 - Linux File Management
 
 ## Objective
 
-Learn basic Linux file management commands used by system administrators.
+Learn basic Linux file and directory management using the command line.
 
-## Tools Used
+## Environment
 
-- Ubuntu Desktop
-- Terminal
+- Ubuntu Linux
+- VirtualBox
+- User Account: santicyber
 
-## Commands Practiced
+---
 
-### cp
+## Tasks Performed
 
-Used to copy files.
+### 1. Created a File
 
-### mv
+Command:
 
-Used to move or rename files.
+```bash
+touch lab3.txt
+```
 
-### cat
+Verified:
 
-Used to display file contents.
+```bash
+ls
+```
 
-### nano
+Result:
 
-Used to create and edit text files.
+```text
+lab3.txt
+```
 
-## Steps Performed
+---
 
-1. Created a test file
-2. Viewed file contents with cat
-3. Edited file with nano
-4. Copied file using cp
-5. Renamed file using mv
-6. Verified results with ls
+### 2. Edited a File Using Nano
 
-## Results
+Opened file:
 
-Successfully created, edited, copied, and renamed files using Linux commands.
+```bash
+nano lab3.txt
+```
 
-## Skills Learned
+Added text:
 
-- File creation
-- File editing
-- File copying
-- File renaming
-- File management
-- Linux command-line navigation
+```text
+This is my first file created with nano!
+```
+
+Saved using:
+
+```text
+Ctrl + O
+Enter
+```
+
+Exited using:
+
+```text
+Ctrl + X
+```
+
+Verified contents:
+
+```bash
+cat lab3.txt
+```
+
+Output:
+
+```text
+This is my first file created with nano!
+```
+
+---
+
+### 3. Created a Directory
+
+Initial attempt:
+
+```bash
+mkdir Practice Folder
+```
+
+Result:
+
+Linux created two separate directories:
+
+```text
+Practice
+Folder
+```
+
+Reason:
+
+Spaces separate command arguments in Linux.
+
+Corrected by deleting the directories:
+
+```bash
+rm -r Practice
+rm -r Folder
+```
+
+Created the directory correctly:
+
+```bash
+mkdir PracticeFolder
+```
+
+Verified:
+
+```bash
+ls
+```
+
+Output:
+
+```text
+PracticeFolder
+```
+
+---
+
+### 4. Navigated Directories
+
+Moved into the directory:
+
+```bash
+cd PracticeFolder
+```
+
+Verified location:
+
+```bash
+pwd
+```
+
+Output:
+
+```text
+/home/santicyber/Desktop/PracticeFolder
+```
+
+---
+
+### 5. Created a File Inside a Directory
+
+Command:
+
+```bash
+touch notes.txt
+```
+
+Verified:
+
+```bash
+ls
+```
+
+Output:
+
+```text
+notes.txt
+```
+
+---
+
+### 6. Edited and Saved File
+
+Opened file:
+
+```bash
+nano notes.txt
+```
+
+Added text:
+
+```text
+This file was created inside a folder I created!
+```
+
+Saved:
+
+```text
+Ctrl + O
+Enter
+```
+
+Exited:
+
+```text
+Ctrl + X
+```
+
+Verified:
+
+```bash
+cat notes.txt
+```
+
+Output:
+
+```text
+This file was created inside a folder I created!
+```
+
+---
+
+### 7. Copied a File
+
+Initial mistake:
+
+```bash
+cp notes.text backup.txt
+```
+
+Error:
+
+```text
+No such file or directory
+```
+
+Cause:
+
+Typed:
+
+```text
+notes.text
+```
+
+instead of:
+
+```text
+notes.txt
+```
+
+Correct command:
+
+```bash
+cp notes.txt backup.txt
+```
+
+Verified:
+
+```bash
+ls
+```
+
+Output:
+
+```text
+backup.txt
+notes.txt
+```
+
+---
+
+### 8. Renamed a File
+
+Command:
+
+```bash
+mv backup.txt backup-old.txt
+```
+
+Verified:
+
+```bash
+ls
+```
+
+Output:
+
+```text
+backup-old.txt
+notes.txt
+```
+
+---
+
+## Commands Learned
+
+```bash
+pwd
+ls
+cd
+mkdir
+touch
+nano
+cat
+cp
+mv
+rm -r
+```
+
+---
+
+## Lessons Learned
+
+- Linux commands are case-sensitive.
+- Spaces separate command arguments.
+- File extensions must be typed exactly.
+- Linux often produces no output when a command succeeds.
+- Error messages provide useful troubleshooting information.
+- `cp` copies files.
+- `mv` renames or moves files.
+- `rm -r` removes directories and their contents.
+- `pwd` shows the current working directory.
+
+---
+
+## Screenshots
+
+Stored in:
+
+Screenshots/Lab-03/
 
