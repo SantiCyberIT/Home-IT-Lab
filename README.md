@@ -1,42 +1,46 @@
-# Home IT Lab
+# Home IT Lab — SantiCyberIT
 
-## Objective
+Hands-on Windows, Linux, networking, and cybersecurity projects built in an isolated virtual lab. My goal is to develop practical troubleshooting, system administration, and blue-team investigative skills while pursuing a cybersecurity degree and industry certifications.
 
-Create a home lab environment to develop practical IT, networking, and cybersecurity skills.
+This repository documents **independent learning and home-lab work**, not paid professional IT employment.
 
-The lab will be expanded over time and used to learn:
+## Featured project
 
-- Virtualization
-- Windows Administration
-- Linux Administration
-- Networking
-- Active Directory
-- Security Monitoring
-- Cybersecurity Fundamentals
+### [Active Directory Corporate Environment](Projects/Active-Directory-Environment/README.md)
+**Core infrastructure and client authentication verified — October 2026**
+
+- Deployed Windows Server 2025 with Active Directory Domain Services and DNS
+- Built and joined a Windows 11 Pro client to `corp.santicyber.test`
+- Verified IP reachability, DNS discovery, domain membership, and secure channel
+- Created a fictional employee account and verified domain sign-in
+- Documented troubleshooting encountered during deployment
+
+[Read project overview, evidence table, and troubleshooting notes →](Projects/Active-Directory-Environment/README.md)
 
 ## Environment
 
-Host Machine:
-- Windows 11
+| Component | Implementation |
+| --- | --- |
+| Host | Windows 11; AMD Ryzen 7 5700G; 32 GB RAM |
+| Virtualization | Oracle VirtualBox |
+| Domain controller | DC01 — Windows Server 2025, AD DS and DNS, `192.168.56.10` |
+| Domain | `corp.santicyber.test` (NetBIOS `CORP`) |
+| Workstation | CLIENT01 — Windows 11 Pro, `192.168.56.20` |
+| Lab network | VirtualBox internal network `CyberLab`, isolated by default |
+| Linux | Existing Ubuntu VM; integration review planned |
 
-Virtualization Platform:
-- VirtualBox
+## Foundational learning archive
 
-Planned Virtual Machines:
-- Ubuntu Linux
-- Windows 11
-- Windows Server
+My earlier Linux and virtualization exercises remain available in [Documentation](Documentation). They cover VM foundations, Linux navigation, file management, permissions, and user/group administration.
 
-## Goals
+Supporting screenshots from those earlier lessons are in [Screenshots](Screenshots); existing diagrams are in [Network-Diagrams](Network-Diagrams).
 
-- Learn VM creation and management
-- Practice network troubleshooting
-- Configure Active Directory
-- Build hands-on experience for IT support and networking roles
-- Document all work for portfolio purposes
+## Roadmap
 
-  ## Repository Structure
+The existing Windows domain is a platform for realistic IT support scenarios, networking troubleshooting, Windows event-log analysis, help-desk workflows, SIEM/blue-team alert triage, and eventually incident-response investigations.
 
-  -Documentation/ - Project notes and lab write ups
-  -Screenshots/ - Evidence and screenshots from labs
-  -Network-Diagrams/ - Network diagrams and topology maps
+Only completed and verified project outcomes are presented as achievements. New investigations and projects will be linked here as evidence becomes available.
+
+## Santi CyberSec videos
+
+Recorded demonstrations are being edited separately. Published videos will be linked from the corresponding project pages when available.
