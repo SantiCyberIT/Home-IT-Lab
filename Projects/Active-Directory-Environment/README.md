@@ -94,7 +94,7 @@ After recovering from the frozen restart, CLIENT01 returned `True` for `Test-Com
 
 #### Employee domain sign-in
 
-Signed in to CLIENT01 as the fictional employee Sally MorganX. `whoami` returned `corp\\smorgan` and `echo %LOGONSERVER%` returned `\\\\DC01`. The earlier command syntax error in this image is genuine and was corrected in the same session.
+Signed in to CLIENT01 as the fictional employee Sally MorganX. `whoami` returned `corp\smorgan` and `echo %LOGONSERVER%` returned `\\DC01`. The earlier command syntax error in this image is genuine and was corrected in the same session.
 
 ![Employee domain account and logon server verification](evidence/11-sally-domain-logon-verified.png)
 
