@@ -58,7 +58,56 @@ Windows 11 host / Oracle VirtualBox
 | Employee session `whoami` | `corp\smorgan` |
 | Employee session `echo %LOGONSERVER%` | `\\DC01` |
 
-**Screenshot status:** Verification screenshots were captured during the lab conversation; repository evidence images are not yet uploaded or linked here. They will be added once selected and sanitized.
+### Evidence gallery
+
+The images below are real screenshots from this isolated home lab. The numbered filenames preserve the rough order of setup and verification. Click an image to inspect it in GitHub.
+
+#### Domain controller diagnostics
+
+The server's `nltest` output locates DC01, while `dcdiag /test:dns` reports successful DNS checks.
+
+![DC01 nltest and dcdiag validation](evidence/04-dc01-diagnostics.png)
+
+#### Workstation connectivity and DNS discovery
+
+CLIENT01 has the intended static network settings, reaches DC01 with zero packet loss, and resolves both the domain address and LDAP SRV service. The initial `nslookup` timeout is retained as part of the actual troubleshooting record.
+
+![CLIENT01 ping and DNS service discovery](evidence/06-client01-connectivity-dns.png)
+
+#### Successful domain join
+
+Windows displayed the welcome message for `corp.santicyber.test` after CLIENT01 was joined.
+
+![Windows domain join welcome confirmation](evidence/07-client01-domain-join-success.png)
+
+#### Computer account in Active Directory
+
+DC01's Active Directory Users and Computers console shows `CLIENT01` in the `Computers` container.
+
+![CLIENT01 computer object in Active Directory](evidence/08-client01-ad-computer-object.png)
+
+#### Secure channel and domain trust
+
+After recovering from the frozen restart, CLIENT01 returned `True` for `Test-ComputerSecureChannel`.
+
+![Successful PowerShell secure channel test](evidence/09-client01-secure-channel.png)
+
+#### Employee domain sign-in
+
+Signed in to CLIENT01 as the fictional employee Sally MorganX. `whoami` returned `corp\\smorgan` and `echo %LOGONSERVER%` returned `\\\\DC01`. The earlier command syntax error in this image is genuine and was corrected in the same session.
+
+![Employee domain account and logon server verification](evidence/11-sally-domain-logon-verified.png)
+
+#### Additional configuration screenshots
+
+- [01 — DC01 static IPv4 and DNS settings](evidence/01-dc01-static-ip-dns.png)
+- [02 — AD DS and DNS roles visible in Server Manager](evidence/02-dc01-ad-dns-roles.png)
+- [03 — Configuring the new Active Directory forest](evidence/03-dc01-domain-promotion.png)
+- [05 — CLIENT01 VirtualBox internal network settings](evidence/05-client01-network-settings.png)
+- [10 — Creating Sally MorganX's domain user account](evidence/10-sally-morganx-account-creation.png)
+
+All 11 selected evidence images are stored in the project's [`evidence/` folder](evidence). No installer screenshots were added merely to inflate the project.
+
 
 ## Troubleshooting and lessons learned
 
@@ -83,7 +132,7 @@ Windows 11 host / Oracle VirtualBox
 
 ## Next work
 
-- Upload sanitized screenshots supporting the verification table
+- Maintain and expand evidence only as further tests and real scenarios are completed
 - Add focused build notes for DC01 and CLIENT01 as needed
 - Establish a sound DC01 backup and recovery procedure before disruptive experiments
 - Reuse the environment for group policy, permissions, help-desk incidents, network investigations, and defensive monitoring
