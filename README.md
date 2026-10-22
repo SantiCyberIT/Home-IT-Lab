@@ -17,6 +17,20 @@ This repository documents **independent learning and home-lab work**, not paid p
 
 [Read project overview, evidence table, and troubleshooting notes →](Projects/Active-Directory-Environment/README.md)
 
+## Troubleshooting case studies
+
+### [Lab 03 — Windows Server DNS Troubleshooting](Projects/Network-DNS-Troubleshooting/README.md)
+**Investigated October 22, 2026 — controlled DNS resolution verified; root cause not fully proven**
+
+- Reproduced a two-second `nslookup` timeout from both DC01 and CLIENT01
+- Configured and verified a reverse DNS zone and PTR record for DC01
+- Compared normal UDP and forced TCP DNS queries
+- Reviewed DNS debug logs, matched request/response IDs, and discovered a duplicated DNS search suffix
+- Verified lookups without the timeout using a trailing dot or `-nosearch`
+- Documented the remaining uncertainty rather than overstating the diagnosis
+
+[Read the investigation, commands, results, and evidence plan →](Projects/Network-DNS-Troubleshooting/README.md)
+
 ## Environment
 
 | Component | Implementation |
