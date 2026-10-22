@@ -113,7 +113,7 @@ All 11 selected evidence images are stored in the project's [`evidence/` folder]
 
 **Guest display resolution:** The Windows 11 guest initially displayed black borders or an improperly scaled desktop. Guest Additions was installed, and switching VirtualBox display modes eventually produced a correctly fitting full-screen display. No rebuild was needed.
 
-**DNS lookup timeout:** An initial two-second timeout and `Server: UnKnown` appeared in `nslookup`, while both the domain A-record lookup and LDAP SRV lookup ultimately returned correct answers. The initial server-identification/reverse-lookup behavior may merit later investigation; a specific root cause has **not** been confirmed.
+**DNS lookup timeout (follow-up on October 22, 2026):** Initial `nslookup` tests showed two-second timeouts and `Server: UnKnown`, although A/SRV records ultimately resolved. A reverse lookup zone and PTR record were subsequently added, resolving DC01 hostname identification. A separate [Lab 03 DNS troubleshooting investigation](../Network-DNS-Troubleshooting/README.md) reproduced the timeout, compared UDP/TCP, inspected debug logs, observed suffix-expanded lookups, and verified successful queries with a trailing dot or `-nosearch`. Suffix-search behavior is the leading explanation, but the exact timed-out transaction has **not** been definitively identified.
 
 **Frozen restart after domain join:** CLIENT01 displayed a successful domain-join welcome message but froze during the subsequent restart. After resetting the unresponsive VM, Windows booted successfully and retained domain membership. The secure-channel check also passed. The underlying cause of the freeze was not established.
 
