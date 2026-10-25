@@ -17,6 +17,19 @@ This repository documents **independent learning and home-lab work**, not paid p
 
 [Read project overview, evidence table, and troubleshooting notes →](Projects/Active-Directory-Environment/README.md)
 
+## Current Linux project
+
+### [Lab 04 — Ubuntu Integration & Linux Administration](Projects/Ubuntu-Integration-Linux-Administration/README.md)
+**Network and split-DNS integration verified — October 24, 2026; access-control audit in progress**
+
+- Connected the existing Ubuntu VM to the isolated `CyberLab` subnet at `192.168.56.30`, keeping NAT available separately
+- Verified Linux-to-Windows Server reachability over the lab network
+- Configured routing-only DNS for `corp.santicyber.test` through DC01 (`192.168.56.10`)
+- Successfully resolved both an internal domain-controller hostname and a public domain
+- Preserved existing local Linux employees and prepared the next user/group permissions audit
+
+[Read Lab 04, verification results, remaining work, and evidence checklist →](Projects/Ubuntu-Integration-Linux-Administration/README.md)
+
 ## Troubleshooting case studies
 
 ### [Lab 03 — Windows Server DNS Troubleshooting](Projects/Network-DNS-Troubleshooting/README.md)
@@ -41,7 +54,7 @@ This repository documents **independent learning and home-lab work**, not paid p
 | Domain | `corp.santicyber.test` (NetBIOS `CORP`) |
 | Workstation | CLIENT01 — Windows 11 Pro, `192.168.56.20` |
 | Lab network | VirtualBox internal network `CyberLab`, isolated by default |
-| Linux | Existing Ubuntu VM; integration review planned |
+| Linux | Ubuntu-Lab — dual NICs: NAT `10.0.2.15`; internal `192.168.56.30`, DNS routing to DC01 |
 
 ## Foundational learning archive
 
